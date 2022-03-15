@@ -7,6 +7,8 @@ import { ArticleCardComponent } from './modules/cards/components/article-card/ar
 import { HeadlineCardComponent } from './modules/cards/components/headlines-card/headline-card/headline-card.component';
 import { NavBarComponent } from './modules/navBar/nav-bar/nav-bar.component';
 import { PrimengSharedModule } from './shared/primeng-shared/primeng-shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialSharedModule } from './shared/angular-material-shared/angular-material-shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { PrimengSharedModule } from './shared/primeng-shared/primeng-shared.modu
     ArticleCardComponent,
     HeadlineCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PrimengSharedModule],
+  imports: [BrowserModule, AppRoutingModule,AngularMaterialSharedModule, PrimengSharedModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
