@@ -8,6 +8,7 @@ import { MegaMenuItem } from 'primeng/api';
 })
 export class NavBarComponent implements OnInit {
   items!: MenuItem[];
+  currentTabIndex: number = 0;
   constructor() {}
 
   ngOnInit() {
@@ -35,5 +36,5 @@ export class NavBarComponent implements OnInit {
     ];
   }
 
-  openPrev(){ }
+  openPrev() {}
 }

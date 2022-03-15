@@ -7,18 +7,20 @@
     </ng-template>
 </p-menubar> -->
 
+<div class="row">
 
-<p-tabView>
-    <p-tabPanel header="Home">
-   CONTETN 1
+  <p-tabView headerAlignment="center" [activeIndex]="currentTabIndex">
+    <p-tabPanel header="News">
+      Content 1
     </p-tabPanel>
     <p-tabPanel header="Busniess">
-        Content 2
+      Content 2
     </p-tabPanel>
     <p-tabPanel header="Tech">
       <a class="nav-link" routerLink="technology"></a>
     </p-tabPanel>
-</p-tabView>
+  </p-tabView>
 
+</div>
 
 
