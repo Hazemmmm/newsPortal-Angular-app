@@ -9,6 +9,7 @@ import { NavBarComponent } from './modules/navBar/nav-bar/nav-bar.component';
 import { PrimengSharedModule } from './shared/primeng-shared/primeng-shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialSharedModule } from './shared/angular-material-shared/angular-material-shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AngularMaterialSharedModule } from './shared/angular-material-shared/an
     ArticleCardComponent,
     HeadlineCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,AngularMaterialSharedModule, PrimengSharedModule, BrowserAnimationsModule],
+  imports: [BrowserModule,FormsModule, AppRoutingModule,AngularMaterialSharedModule, PrimengSharedModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -5,6 +5,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   imports: [
@@ -13,7 +14,14 @@ import { ButtonModule } from 'primeng/button';
     InputTextModule,
     TabViewModule,
     ButtonModule,
+    AutoCompleteModule,
   ],
-  exports: [MenubarModule, InputTextModule, TabViewModule, ButtonModule],
+  exports: [
+    MenubarModule,
+    InputTextModule,
+    TabViewModule,
+    ButtonModule,
+    AutoCompleteModule,
+  ],
 })
 export class PrimengSharedModule {}

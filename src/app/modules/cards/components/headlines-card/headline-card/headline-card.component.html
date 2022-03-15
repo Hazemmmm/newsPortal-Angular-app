@@ -1,3 +1,12 @@
-<p>
-  headline-card works!
-</p>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img class="img-center" src='https://upload.wikimedia.org/wikipedia/commons/5/58/NewYorkTimes.svg'>
+
+  <span class="example-spacer"></span>
+  <div><i class="pi pi-search"></i></div>
+ <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)">
+</p-autoComplete>
+
+</mat-toolbar>
