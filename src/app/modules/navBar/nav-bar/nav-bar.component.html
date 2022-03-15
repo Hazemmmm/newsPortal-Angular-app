@@ -1,8 +1,21 @@
-<p-menubar [model]="items">
+<!-- <p-menubar [model]="items">
     <ng-template pTemplate="start">
-        <img src="assets/showcase/images/primeng.svg" height="40" class="mr-2">
+        <<img src="assets/primeng.svg" height="40" class="mr-2">>
     </ng-template>
     <ng-template pTemplate="end">
         <input type="text" pInputText placeholder="Search">
     </ng-template>
-</p-menubar>
+</p-menubar> -->
+
+
+<p-tabView>
+    <p-tabPanel header="Home">
+      <app-article-card></app-article-card>
+    </p-tabPanel>
+    <p-tabPanel header="Busniess">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Tech">
+        Content 3
+    </p-tabPanel>
+</p-tabView>
