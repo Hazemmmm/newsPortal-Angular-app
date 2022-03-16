@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  NYTApiUrl: 'https://api.nytimes.com/svc/topstories/v2/home.json',
+  NEW_YORK_TIMES_API_KEY: 'oCPGKfbCyvsLoiWqPlIuqmA8liKIal57',
 };
 
 /*
