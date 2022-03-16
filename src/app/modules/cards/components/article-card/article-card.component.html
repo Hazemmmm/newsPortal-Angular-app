@@ -1,3 +1,44 @@
-<p>
-  article-card works!
-</p>
+  <!-- <div class="container-fluid mt-5">
+  <h4>Technology News</h4>
+  <div class="row">
+    <div
+      class="col-lg-3 mt-3 mb-3"
+      *ngFor="let technews of technologyNewsResult"
+    >
+      <div class="card">
+        <img src="{{ technews.urlToImage }}" width="100%" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ technews.title }}</h5>
+          <a
+            href="{{ technews.url }}"
+            target="_blank"
+            class="btn btn-dark btn-sm mt-2"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+    </div> -->
+
+<div class="container-fluid mt-5">
+  <h4>Technology News</h4>
+  <div class="row">
+  <div
+      class="col-lg-3 mt-3 mb-3"
+      *ngFor="let technews of technologyNewsResult"
+    >
+        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="{{ technews.urlToImage }}" width="100%" class="card-img-top" alt="..." >
+        </ng-template>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+        <ng-template pTemplate="footer">
+            <p-button label="Save" icon="pi pi-check"></p-button>
+            <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+        </ng-template>
+    </p-card>
+  </div>
+  </div>
+</div>

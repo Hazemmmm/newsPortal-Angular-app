@@ -6,6 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     TabViewModule,
     ButtonModule,
     AutoCompleteModule,
+    CardModule,
   ],
   exports: [
     MenubarModule,
@@ -22,6 +24,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     TabViewModule,
     ButtonModule,
     AutoCompleteModule,
+    CardModule,
   ],
 })
 export class PrimengSharedModule {}

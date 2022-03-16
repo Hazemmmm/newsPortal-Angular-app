@@ -10,7 +10,7 @@ import { PrimengSharedModule } from './shared/primeng-shared/primeng-shared.modu
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialSharedModule } from './shared/angular-material-shared/angular-material-shared.module';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,14 @@ import { FormsModule } from '@angular/forms';
     ArticleCardComponent,
     HeadlineCardComponent,
   ],
-  imports: [BrowserModule,FormsModule, AppRoutingModule,AngularMaterialSharedModule, PrimengSharedModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,AppRoutingModule,
+    AngularMaterialSharedModule,
+    PrimengSharedModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
