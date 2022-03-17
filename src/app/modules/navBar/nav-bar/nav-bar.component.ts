@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,38 +7,16 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
-  items!: MenuItem[];
+
 
   currentTabIndex: number = 0;
-
+  links = ['First', 'Second', 'Third'];
+  activeLink = this.links[0];
+  background: ThemePalette = undefined;
   constructor() {}
 
   ngOnInit() {
 
-
-    // this.items = [
-    //   {
-    //     label: 'File',
-    //     icon: 'pi pi-fw pi-file',
-    //   },
-    //   {
-    //     label: 'Edit',
-    //     icon: 'pi pi-fw pi-pencil',
-    //   },
-    //   {
-    //     label: 'Users',
-    //     icon: 'pi pi-fw pi-user',
-    //   },
-    //   {
-    //     label: 'Events',
-    //     icon: 'pi pi-fw pi-calendar',
-    //   },
-    //   {
-    //     label: 'Quit',
-    //     icon: 'pi pi-fw pi-power-off',
-    //   },
-    // ];
   }
 
-  openPrev() {}
 }
