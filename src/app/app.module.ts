@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsCardComponent } from './modules/cards/components/news-card/news-card/news-card.component';
 import { HeaderToolbarComponent } from './modules/cards/components/header/header-toolbar/header-toolbar.component';
 import { ArticleCardComponent } from './modules/cards/components/article-card/article-card.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { ArticleCardComponent } from './modules/cards/components/article-card/ar
     AngularMaterialSharedModule,
     PrimengSharedModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

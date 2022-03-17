@@ -18,9 +18,14 @@ export interface BlogPostCard {
   styleUrls: ['./news-card.component.css'],
 })
 export class NewsCardComponent implements OnInit {
+  nytAltImg =
+    'https://mpng.subpng.com/20180606/cea/kisspng-the-new-york-times-company-new-york-city-news-jour-new-york-icons-5b187238ae78d0.6794013715283287607146.jpg';
   latestNewsResult!: IArticle[];
   data!: BlogPostCard;
-
+  pageSize = 12;
+  page = 1;
+  totalCount!: number;
+  size = 5;
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
@@ -32,19 +37,7 @@ export class NewsCardComponent implements OnInit {
       console.log(data);
 
       this.latestNewsResult = data.results;
-      // this.setCardData(this.latestNewsResult);
+      this.totalCount = data.results.length;
     });
   }
-
-  // setCardData(data: IArticle[]): void {
-  //   console.log(data);
-
-  //   if (data.length > 0) {
-  //     data?.forEach((article) => {
-  //       this.mainHeader = article.title;
-  //     });
-  //   } else {
-  //     // handle page loader
-  //   }
-  // }
 }
