@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { HeadlineCardComponent } from './headline-card.component';
+import { HeaderToolbarComponent } from './header-toolbar.component';
 
-describe('HeadlineCardComponent', () => {
-  let component: HeadlineCardComponent;
-  let fixture: ComponentFixture<HeadlineCardComponent>;
+describe('HeaderToolbarComponent', () => {
+  let component: HeaderToolbarComponent;
+  let fixture: ComponentFixture<HeaderToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeadlineCardComponent ]
+      declarations: [ HeaderToolbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeadlineCardComponent);
+    fixture = TestBed.createComponent(HeaderToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
