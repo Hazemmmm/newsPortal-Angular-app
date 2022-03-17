@@ -1,17 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/core/api/api.service';
 import { IArticle } from 'src/app/core/models/nyt.response.model';
-
-
-export interface BlogPostCard {
-  mainImageUrl: string;
-  category: string;
-  title: string;
-  description: string;
-  postDate: string;
-  authorImageUrl: string;
-  authorName: string;
-}
 @Component({
   selector: 'app-news-card',
   templateUrl: './news-card.component.html',
@@ -21,7 +11,6 @@ export class NewsCardComponent implements OnInit {
   nytAltImg =
     'https://mpng.subpng.com/20180606/cea/kisspng-the-new-york-times-company-new-york-city-news-jour-new-york-icons-5b187238ae78d0.6794013715283287607146.jpg';
   latestNewsResult!: IArticle[];
-  data!: BlogPostCard;
   pageSize = 12;
   page = 1;
   totalCount!: number;
