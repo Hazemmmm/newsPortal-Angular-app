@@ -7,6 +7,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+
 
 @NgModule({
   imports: [
@@ -17,6 +19,7 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     AutoCompleteModule,
     CardModule,
+    DividerModule,
   ],
   exports: [
     MenubarModule,
@@ -25,6 +28,7 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     AutoCompleteModule,
     CardModule,
+    DividerModule,
   ],
 })
 export class PrimengSharedModule {}
