@@ -1,19 +1,16 @@
- <div class="container">
+ <!-- <div class="container">
   <div>Technology News</div>
   <div class="row">
   <div
-      class="col-md-4"
+      class="col-md-4 .h-100"
       *ngFor="let news of latestNewsResult"
     >
-        <p-card header="{{news.title}}" subheader="{{news.section}}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-card header="{{news.title}}" subheader="{{news.section}}" [style]="{width: '360px'}" styleClass="card p-card-shadow">
         <ng-template pTemplate="header">
-            <img alt="Card" src="{{ news.multimedia[0]?.url }}" width="100%" class="card-img-top" alt="..." >
+            <img alt="Card" src="{{ news.multimedia[0].url }}" width="100%" class="card-img-top" alt="..." >
         </ng-template>
         <ng-template pTemplate="title">
-            <p>loremcadss dsa </p>
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-         <p>loremcadss dsa title;eeeeeeeeeeeeeeee </p>
+            <p>{{news.subsection}}</p>
         </ng-template>
         <ng-template pTemplate="content">
             <p class="text-wrapper">{{news.abstract}}</p>
@@ -22,7 +19,7 @@
 
         <ng-template pTemplate="footer">
 
-            <p-button label="Read More" icon="pi-question-circle" styleClass="p-button-secondary" [style]="{'margin-left': '5em'}"></p-button>  
+            <p-button label="Read More" icon="pi-question-circle" styleClass="p-button-secondary" [style]="{'margin-left': '5em'}"></p-button>
         </ng-template>
         </p-card>
   </div>
@@ -30,4 +27,41 @@
 </div>
 
 
+ -->
 
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-4 .h-100"  *ngFor="let news of latestNewsResult">
+
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="{{ news.multimedia ? news.multimedia[0].url : 'https://mpng.subpng.com/20180606/cea/kisspng-the-new-york-times-company-new-york-city-news-jour-new-york-icons-5b187238ae78d0.6794013715283287607146.jpg' }}
+"
+                        alt="Trendy Pants and Shoes"
+                        class="img-fluid rounded-start"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{news.title}}</h5>
+                        <p class="card-text">{{news.abstract}}</p>
+                        <p class="card-text">
+                          <small class="text-muted">{{news.created_date | date:"fullDate"}}</small>
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
