@@ -13,6 +13,7 @@ import { NewsCardComponent } from './modules/cards/components/news-card/news-car
 import { HeaderToolbarComponent } from './modules/cards/components/header/header-toolbar/header-toolbar.component';
 import { ArticleCardComponent } from './modules/cards/components/article-card/article-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterCategoriesComponent } from './modules/filter/filter-categories/filter-categories.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NavBarComponent,
     ArticleCardComponent,
     NewsCardComponent,
+    FilterCategoriesComponent,
   ],
   imports: [
     BrowserModule,

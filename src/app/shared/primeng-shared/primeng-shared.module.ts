@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { DividerModule } from 'primeng/divider';
     AutoCompleteModule,
     CardModule,
     DividerModule,
+    DropdownModule,
   ],
   exports: [
     MenubarModule,
@@ -29,6 +31,7 @@ import { DividerModule } from 'primeng/divider';
     AutoCompleteModule,
     CardModule,
     DividerModule,
+    DropdownModule,
   ],
 })
 export class PrimengSharedModule {}
