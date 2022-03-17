@@ -1,4 +1,4 @@
-import { ApiService } from './../../../services/api.service';
+import { ApiService } from '../../../../core/api/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ export class ArticleCardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.technologyNews().subscribe((res) => {
+    this.apiService.getLatestNewsList().subscribe((res) => {
       this.technologyNewsResult = res.articles;
     });
   }

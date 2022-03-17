@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/modules/services/api.service';
+import { ApiService } from 'src/app/core/api/api.service';
 
 @Component({
   selector: 'app-news-card',
@@ -13,11 +13,10 @@ export class NewsCardComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getLatestNewsList().subscribe((res) => {
-      this.newsList = res.results;
-      console.log(this.newsList);
-
-
+      
     })
+
+
   }
 
 }

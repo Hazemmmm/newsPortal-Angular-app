@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  NYTApiUrl: 'https://api.nytimes.com/svc/topstories/v2/home.json',
+  NYTApiUrl: 'https://api.nytimes.com/svc/topstories/v2/',
   NEW_YORK_TIMES_API_KEY: 'oCPGKfbCyvsLoiWqPlIuqmA8liKIal57',
 };
 
