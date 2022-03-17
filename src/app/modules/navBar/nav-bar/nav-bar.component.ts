@@ -7,16 +7,15 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
-
-
   currentTabIndex: number = 0;
-  links = ['First', 'Second', 'Third'];
-  activeLink = this.links[0];
+  navLinks = [
+    { label: 'News', path: 'news' },
+    { label: 'Tech', path: 'tech' },
+    { label: 'Articles', path: 'articles' },
+  ];
+  activeLink = this.navLinks[0];
   background: ThemePalette = undefined;
   constructor() {}
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }
