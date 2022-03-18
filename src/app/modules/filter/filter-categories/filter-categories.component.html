@@ -1,1 +1,1 @@
-<p-dropdown [options]="categories" [(ngModel)]="selectedCategory" placeholder="Select a category" optionLabel="name" [showClear]="true"></p-dropdown>
+<p-dropdown [options]="categories" [(ngModel)]="selectedCategory" placeholder="Select a category"  [showClear]="true" (ngModelChange)="onChange($event)"></p-dropdown>

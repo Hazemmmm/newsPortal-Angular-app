@@ -14,6 +14,7 @@ import { HeaderToolbarComponent } from './modules/cards/components/header/header
 import { ArticleCardComponent } from './modules/cards/components/article-card/article-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterCategoriesComponent } from './modules/filter/filter-categories/filter-categories.component';
+import { FilterPipe } from './modules/cards/components/news-card/news-card/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { FilterCategoriesComponent } from './modules/filter/filter-categories/fi
     ArticleCardComponent,
     NewsCardComponent,
     FilterCategoriesComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

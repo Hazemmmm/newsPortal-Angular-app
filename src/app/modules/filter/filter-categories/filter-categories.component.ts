@@ -1,4 +1,7 @@
+import { ArticleSections } from './../../../core/models/ArticleSections.enum';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/core/api/api.service';
+import { InteractService } from 'src/app/core/api/interact.service';
 
 @Component({
   selector: 'app-filter-categories',
@@ -6,23 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-categories.component.css'],
 })
 export class FilterCategoriesComponent implements OnInit {
-  categories!: any[];
-  selectedCategory!: string;
+  categories!: string[];
+  selectedCategory!: any;
 
-  constructor() {}
+  constructor(private interactService: InteractService,private apiService: ApiService) {}
 
   ngOnInit() {
-    this.categories = [
-      { name: 'Australia', code: 'AU' },
-      { name: 'Brazil', code: 'BR' },
-      { name: 'China', code: 'CN' },
-      { name: 'Egypt', code: 'EG' },
-      { name: 'France', code: 'FR' },
-      { name: 'Germany', code: 'DE' },
-      { name: 'India', code: 'IN' },
-      { name: 'Japan', code: 'JP' },
-      { name: 'Spain', code: 'ES' },
-      { name: 'United States', code: 'US' },
-    ];
+    console.log(this.selectedCategory);
+
+    this.getCategoriesList();
+  }
+  getCategoriesList(): void {
+    this.interactService.$cateogires.subscribe((res) => {
+      this.categories = res;
+    });
+  }
+
+  getSelectedCategory(): void {
+    console.log(this.selectedCategory);
+  }
+
+  onChange(category: ArticleSections) {
+    this.interactService.$category.next(category);
+  //   if (category !== undefined) {
+  //     this.apiService.getSectionArticleList(category).subscribe((data) => {
+  //       // console.log(data);
+
+
+
+  //    })
+  //  }
   }
 }
