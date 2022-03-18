@@ -13,11 +13,12 @@ export interface IArticle {
   title: string;
   abstract: string;
   url: string;
+  uri: string;
   byline: string;
   item_type: string;
-  updated_date: Date;
-  created_date: Date;
-  published_date: Date;
+  updated_date: Date | string;
+  created_date: Date | string;
+  published_date: Date | string;
   material_type_facet: string;
   kicker: string;
   des_facet: string[];

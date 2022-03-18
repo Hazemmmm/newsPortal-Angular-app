@@ -44,7 +44,6 @@ export class NewsCardComponent implements OnInit, OnDestroy {
           this.interactService.$isLoading.next(false);
           this.latestNewsResult = data.results;
           this.totalCount = data.results.length;
-
           this.interactService.$cateogires.next([
             ...new Set(data.results.map((x) => x.section)),
           ]);
