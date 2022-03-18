@@ -1,6 +1,6 @@
 import { InteractService } from './../../../../../core/api/interact.service';
-import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { ApiService } from 'src/app/core/api/api.service';
 import { IArticle } from 'src/app/core/models/nyt.response.model';
 @Component({
@@ -8,9 +8,14 @@ import { IArticle } from 'src/app/core/models/nyt.response.model';
   templateUrl: './news-card.component.html',
   styleUrls: ['./news-card.component.css'],
 })
-export class NewsCardComponent implements OnInit {
+export class NewsCardComponent implements OnInit, OnDestroy {
   nytAltImg =
     'https://mpng.subpng.com/20180606/cea/kisspng-the-new-york-times-company-new-york-city-news-jour-new-york-icons-5b187238ae78d0.6794013715283287607146.jpg';
+
+  latestNewsSubscription!: Subscription;
+  filteredSubscription!: Subscription;
+  searchSubscription!: Subscription;
+
   latestNewsResult: IArticle[] = [];
   pageSize = 12;
   page = 1;
@@ -30,7 +35,7 @@ export class NewsCardComponent implements OnInit {
   }
 
   getNews(): void {
-    this.apiService.getLatestNewsList().subscribe((data) => {
+   this. latestNewsSubscription = this.apiService.getLatestNewsList().subscribe((data) => {
       if (data.results.length > 0) {
         this.latestNewsResult = data.results;
         this.totalCount = data.results.length;
@@ -43,7 +48,7 @@ export class NewsCardComponent implements OnInit {
   }
 
   filterCategory(): void {
-    this.interactService.$category.subscribe((res) => {
+    this.filteredSubscription = this.interactService.$category.subscribe((res) => {
       if (res !== null) {
         this.filterCategoryName = res;
       } else {
@@ -53,8 +58,16 @@ export class NewsCardComponent implements OnInit {
   }
 
   searchArticle(): void {
-    this.interactService.$searchValue.subscribe((res) => {
-        this.searchValue = res;
-    })
+   this.searchSubscription = this.interactService.$searchValue.subscribe((res) => {
+      this.searchValue = res;
+    });
+  }
+
+  ngOnDestroy(): void {
+
+    this.latestNewsSubscription.unsubscribe();
+    this.filteredSubscription.unsubscribe();
+    this.searchSubscription.unsubscribe();
+
   }
 }
