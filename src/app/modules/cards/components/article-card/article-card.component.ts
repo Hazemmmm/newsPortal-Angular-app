@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { InteractService } from 'src/app/core/api/interact.service';
+import { IArticle } from 'src/app/core/models/nyt.response.model';
 
 @Component({
   selector: 'app-article-card',
@@ -13,17 +15,24 @@ export class ArticleCardComponent implements OnInit, OnDestroy {
 
   private articleDataSubscription!: Subscription;
   technologyNewsResult: any;
-  articleData: any;
-  constructor(private interactService: InteractService) {}
+  articleData!: IArticle;
+  constructor(private interactService: InteractService, private router: Router) {}
 
   ngOnInit() {
     this.getArticleData();
   }
   getArticleData(): void {
+    this.interactService.$isLoading.next(true);
     this.articleDataSubscription = this.interactService.$articleData.subscribe(
       (res) => {
-         return this.articleData = res;
-
+        if (res.length === 0) {
+          // handle when refreshing the page route[/article]
+          this.router.navigate(['news']);
+        }
+        else {
+          this.articleData = res;
+          this.interactService.$isLoading.next(false);
+        }
       }
     );
   }

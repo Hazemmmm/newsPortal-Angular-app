@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { InteractService } from 'src/app/core/api/interact.service';
 
 @Component({
@@ -6,14 +7,25 @@ import { InteractService } from 'src/app/core/api/interact.service';
   templateUrl: './spinner-loader.component.html',
   styleUrls: ['./spinner-loader.component.css'],
 })
-export class SpinnerLoaderComponent implements OnInit {
+export class SpinnerLoaderComponent implements OnInit, OnDestroy {
   isLoading!: boolean;
-
+  isLoadingSubscription!: Subscription;
   constructor(private interactService: InteractService) {}
 
   ngOnInit() {
-    this.interactService.$isLoading.subscribe((flag: boolean) => {
-      this.isLoading = flag;
-    })
+    this.setIsLoadingFlag();
+  }
+
+  setIsLoadingFlag(): void {
+    this.isLoadingSubscription = this.interactService.$isLoading.subscribe(
+      (flag: boolean) => {
+        this.isLoading = flag;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+
+    this.isLoadingSubscription.unsubscribe();
   }
 }
