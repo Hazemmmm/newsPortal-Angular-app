@@ -11,6 +11,6 @@ export class InteractService {
   $category = new BehaviorSubject<string>('');
   $searchValue = new BehaviorSubject<string>('');
   $articleData = new BehaviorSubject<any>([]);
-
+  $isLoading = new BehaviorSubject<boolean>(true);
   constructor() {}
 }

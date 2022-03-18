@@ -16,7 +16,6 @@ export class NewsCardComponent implements OnInit, OnDestroy {
   latestNewsSubscription!: Subscription;
   filteredSubscription!: Subscription;
   searchSubscription!: Subscription;
-  isLoading  = true;
   latestNewsResult: IArticle[] = [];
   pageSize = 12;
   page = 1;
@@ -37,11 +36,12 @@ export class NewsCardComponent implements OnInit, OnDestroy {
   }
 
   getNews(): void {
+    this.interactService.$isLoading.next(true);
     this.latestNewsSubscription = this.apiService
       .getLatestNewsList()
       .subscribe((data) => {
         if (data.results.length > 0) {
-         this.isLoading = false;
+          this.interactService.$isLoading.next(false);
           this.latestNewsResult = data.results;
           this.totalCount = data.results.length;
 

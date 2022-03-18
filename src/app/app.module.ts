@@ -16,6 +16,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterCategoriesComponent } from './modules/filter/filter-categories/filter-categories.component';
 import { FilterPipe } from './modules/filter/filter.pipe';
 import { SearchPipe } from './modules/search/search.pipe';
+import { SpinnerLoaderComponent } from './shared/components/spinner-loader/spinner-loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { SearchPipe } from './modules/search/search.pipe';
     FilterCategoriesComponent,
     FilterPipe,
     SearchPipe,
+    SpinnerLoaderComponent,
   ],
   imports: [
     BrowserModule,
