@@ -7,7 +7,7 @@ import { INYTRespose } from 'src/app/core/models/nyt.response.model';
 
 
 const API_KEY = environment.NEW_YORK_TIMES_API_KEY;
-const APIS: any = {
+export const APIS: any = {
   home: `${environment.NYTApiUrl}home.json?api-key=${API_KEY}`,
 
   section: (section: ArticleSections) => {
