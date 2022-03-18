@@ -33,7 +33,7 @@
 
     <div class="row">
 
-        <div class="col-md-4 .h-100"  *ngFor="let news of latestNewsResult  | filter: filterCategoryName | paginate: {
+        <div class="col-md-4 .h-100"  *ngFor="let news of latestNewsResult  | filter: filterCategoryName | search: searchValue | paginate: {
               itemsPerPage: pageSize,
               currentPage: page,
               totalItems: totalCount

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { InteractService } from 'src/app/core/api/interact.service';
 
 @Component({
   selector: 'app-header-toolbar',
@@ -7,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderToolbarComponent implements OnInit {
   text!: string;
-  searchString!: string;
+  searchString: string = '';
   results: string[] = [];
-  constructor() {}
+
+  constructor(private interactService: InteractService) {}
 
   ngOnInit() {}
-  search(event: any) {
-    // this.mylookupservice.getResults(event.query).then((data) => {
-    //   this.results = data;
-    // });
+
+  onSearchChange(searchValue: any): void {
+    this.interactService.$searchValue.next(searchValue.target.value);
   }
 }

@@ -14,7 +14,8 @@ import { HeaderToolbarComponent } from './modules/cards/components/header/header
 import { ArticleCardComponent } from './modules/cards/components/article-card/article-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterCategoriesComponent } from './modules/filter/filter-categories/filter-categories.component';
-import { FilterPipe } from './modules/cards/components/news-card/news-card/filter.pipe';
+import { FilterPipe } from './modules/filter/filter.pipe';
+import { SearchPipe } from './modules/search/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { FilterPipe } from './modules/cards/components/news-card/news-card/filte
     NewsCardComponent,
     FilterCategoriesComponent,
     FilterPipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class NavBarComponent implements OnInit {
   navLinks = [
     { label: 'News', path: 'news' },
     { label: 'Tech', path: 'tech' },
-    { label: 'Articles', path: 'articles' },
+    // { label: 'Articles', path: 'articles' },
   ];
   activeLink = this.navLinks[0];
   background: ThemePalette = undefined;

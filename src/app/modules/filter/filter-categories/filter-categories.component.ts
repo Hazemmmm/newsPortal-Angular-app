@@ -26,7 +26,7 @@ export class FilterCategoriesComponent implements OnInit {
   }
 
   getSelectedCategory(): void {
-    console.log(this.selectedCategory);
+    // console.log(this.selectedCategory);
   }
 
   onChange(category: ArticleSections) {

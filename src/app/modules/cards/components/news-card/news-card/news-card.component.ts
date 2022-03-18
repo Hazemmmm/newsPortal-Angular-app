@@ -17,6 +17,7 @@ export class NewsCardComponent implements OnInit {
   totalCount!: number;
   size = 5;
   filterCategoryName!: string;
+  searchValue!: string;
   constructor(
     private apiService: ApiService,
     private interactService: InteractService
@@ -25,33 +26,35 @@ export class NewsCardComponent implements OnInit {
   ngOnInit() {
     this.getNews();
     this.filterCategory();
-
-
+    this.searchArticle();
   }
 
   getNews(): void {
-    this.apiService.getLatestNewsList().subscribe(
+    this.apiService.getLatestNewsList().subscribe((data) => {
+      if (data.results.length > 0) {
+        this.latestNewsResult = data.results;
+        this.totalCount = data.results.length;
 
-      (data) => {
-        if (data.results.length > 0) {
-          this.latestNewsResult = data.results;
-          this.totalCount = data.results.length;
-
-          this.interactService.$cateogires.next([
-            ...new Set(data.results.map((x) => x.section)),
-          ]);
-        }
-      });
+        this.interactService.$cateogires.next([
+          ...new Set(data.results.map((x) => x.section)),
+        ]);
+      }
+    });
   }
 
   filterCategory(): void {
     this.interactService.$category.subscribe((res) => {
       if (res !== null) {
         this.filterCategoryName = res;
-      }
-      else {
+      } else {
         this.interactService.$category.next('');
       }
     });
+  }
+
+  searchArticle(): void {
+    this.interactService.$searchValue.subscribe((res) => {
+        this.searchValue = res;
+    })
   }
 }

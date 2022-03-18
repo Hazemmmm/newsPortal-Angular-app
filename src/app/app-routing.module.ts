@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/news', pathMatch: 'full' },
   { path: 'news', component: NewsCardComponent },
   { path: 'tech', component: TechCardComponent },
-  { path: 'articles', component: ArticleCardComponent },
+  // { path: 'search', component: ArticleCardComponent },
 ];
 
 @NgModule({

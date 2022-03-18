@@ -8,6 +8,7 @@ import { ApiService } from './api.service';
 export class InteractService {
   $cateogires = new BehaviorSubject<string[]>(['']);
   $category = new BehaviorSubject<string>('');
-
-  constructor(private apiService: ApiService) {}
+  $searchValue = new BehaviorSubject<string>('');
+  
+  constructor() {}
 }
