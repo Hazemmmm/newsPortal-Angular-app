@@ -1,11 +1,9 @@
-/* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
 import { mockNYTResponse } from '../mock_NYTResponse';
 import { FilterPipe } from './filter.pipe';
 
 
-fdescribe('Pipe: Filtere', () => {
+describe('Pipe: Filtere', () => {
 
   it('create an instance', () => {
     let pipe = new FilterPipe();
@@ -22,6 +20,6 @@ fdescribe('Pipe: Filtere', () => {
 
   it('Should return a whole List ', () => {
     let pipe = new FilterPipe();
-expect(pipe.transform(mockNYTResponse, '')).toEqual(mockNYTResponse);
+    expect(pipe.transform(mockNYTResponse, '')).toEqual(mockNYTResponse);
   })
 });
