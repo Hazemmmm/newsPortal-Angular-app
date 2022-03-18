@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderToolbarComponent implements OnInit {
   text!: string;
-
+  searchString!: string;
   results: string[] = [];
   constructor() {}
 

@@ -1,16 +1,24 @@
 <mat-toolbar>
-  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"> -->
-    <!-- <mat-icon>menu</mat-icon> -->
     <app-filter-categories></app-filter-categories>
-  <!-- </button> -->
 
-  <div class="img-center">
-    <img class="rounded" alt="..." src='https://upload.wikimedia.org/wikipedia/commons/5/58/NewYorkTimes.svg'>
-  </div>
 
-  <span class="example-spacer"></span>
-  <div><i class="pi pi-search"></i></div>
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-12">
+        <img class="img-responsive center-block d-block mx-auto" alt="..." src='https://upload.wikimedia.org/wikipedia/commons/5/58/NewYorkTimes.svg'>
+      </div>
+      </div>
+    </div>
+
+  <!-- <span class="example-spacer"></span> -->
+  <!-- <div><i class="pi pi-search"></i></div>
  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)">
-</p-autoComplete>
+</p-autoComplete> -->
+
+
+<span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText placeholder="Search" [(ngModel)]="searchString" />
+</span>
 
 </mat-toolbar>
