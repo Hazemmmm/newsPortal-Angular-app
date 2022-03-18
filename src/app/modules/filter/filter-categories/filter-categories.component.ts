@@ -17,8 +17,6 @@ export class FilterCategoriesComponent implements OnInit, OnDestroy {
   constructor(private interactService: InteractService,private apiService: ApiService) {}
 
   ngOnInit() {
-    console.log(this.selectedCategory);
-
     this.getCategoriesList();
   }
   getCategoriesList(): void {
@@ -35,7 +33,7 @@ export class FilterCategoriesComponent implements OnInit, OnDestroy {
 
   onChange(category: ArticleSections) {
     this.interactService.$category.next(category);
- 
+
   }
 
   ngOnDestroy(): void {

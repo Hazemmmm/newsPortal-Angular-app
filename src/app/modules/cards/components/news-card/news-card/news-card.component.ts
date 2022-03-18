@@ -1,8 +1,9 @@
 import { InteractService } from './../../../../../core/api/interact.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import {  Subscription } from 'rxjs';
 import { ApiService } from 'src/app/core/api/api.service';
 import { IArticle } from 'src/app/core/models/nyt.response.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-news-card',
   templateUrl: './news-card.component.html',
@@ -25,7 +26,8 @@ export class NewsCardComponent implements OnInit, OnDestroy {
   searchValue!: string;
   constructor(
     private apiService: ApiService,
-    private interactService: InteractService
+    private interactService: InteractService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -35,39 +37,47 @@ export class NewsCardComponent implements OnInit, OnDestroy {
   }
 
   getNews(): void {
-   this. latestNewsSubscription = this.apiService.getLatestNewsList().subscribe((data) => {
-      if (data.results.length > 0) {
-        this.latestNewsResult = data.results;
-        this.totalCount = data.results.length;
+    this.latestNewsSubscription = this.apiService
+      .getLatestNewsList()
+      .subscribe((data) => {
+        if (data.results.length > 0) {
+          this.latestNewsResult = data.results;
+          this.totalCount = data.results.length;
 
-        this.interactService.$cateogires.next([
-          ...new Set(data.results.map((x) => x.section)),
-        ]);
-      }
-    });
+          this.interactService.$cateogires.next([
+            ...new Set(data.results.map((x) => x.section)),
+          ]);
+        }
+      });
   }
 
   filterCategory(): void {
-    this.filteredSubscription = this.interactService.$category.subscribe((res) => {
-      if (res !== null) {
-        this.filterCategoryName = res;
-      } else {
-        this.interactService.$category.next('');
+    this.filteredSubscription = this.interactService.$category.subscribe(
+      (res) => {
+        if (res !== null) {
+          this.filterCategoryName = res;
+        } else {
+          this.interactService.$category.next('');
+        }
       }
-    });
+    );
   }
 
   searchArticle(): void {
-   this.searchSubscription = this.interactService.$searchValue.subscribe((res) => {
-      this.searchValue = res;
-    });
+    this.searchSubscription = this.interactService.$searchValue.subscribe(
+      (res) => {
+        this.searchValue = res;
+      }
+    );
+  }
+  onClickaArticle(article: IArticle): void {
+    this.router.navigate(['article']);
+    this.interactService.$articleData.next(article);
   }
 
   ngOnDestroy(): void {
-
     this.latestNewsSubscription.unsubscribe();
     this.filteredSubscription.unsubscribe();
     this.searchSubscription.unsubscribe();
-
   }
 }
