@@ -3,7 +3,7 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { InteractService } from './interact.service';
 
-describe('Service: Interact', () => {
+xdescribe('Service: Interact', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [InteractService]

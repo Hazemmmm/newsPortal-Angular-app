@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { FilterCategoriesComponent } from './filter-categories.component';
 
-describe('FilterCategoriesComponent', () => {
+xdescribe('FilterCategoriesComponent', () => {
   let component: FilterCategoriesComponent;
   let fixture: ComponentFixture<FilterCategoriesComponent>;
 
