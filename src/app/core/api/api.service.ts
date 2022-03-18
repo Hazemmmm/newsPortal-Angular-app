@@ -1,9 +1,10 @@
 import { ArticleSections } from '../models/ArticleSections.enum';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { INYTRespose } from 'src/app/core/models/nyt.response.model';
+
 
 const API_KEY = environment.NEW_YORK_TIMES_API_KEY;
 const APIS: any = {
@@ -24,10 +25,18 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getLatestNewsList(): Observable<INYTRespose> {
-    return this.http.get<INYTRespose>(APIS.home);
+    return this.http
+      .get<INYTRespose>(APIS.home)
+      .pipe(catchError(this.handleError));
   }
 
-  getSectionArticleList(section: ArticleSections): Observable<INYTRespose>{
-    return this.http.get<INYTRespose>(APIS.section(section));
+  getSectionArticleList(section: ArticleSections): Observable<INYTRespose> {
+    return this.http
+      .get<INYTRespose>(APIS.section(section))
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(err: HttpErrorResponse): Observable<never> {
+    return throwError(() => console.log(err.message));
   }
 }

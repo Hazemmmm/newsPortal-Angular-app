@@ -1,16 +1,23 @@
-/* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+
+import { HttpClientModule } from '@angular/common/http';
+import { TestBed, inject } from '@angular/core/testing';
 import { ApiService } from './api.service';
 
-xdescribe('Service: Api', () => {
+describe('Service: Api', () => {
+
+  let service: ApiService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ApiService]
+      imports: [HttpClientModule],
+      providers: [ApiService],
     });
+
+  service = TestBed.inject(ApiService);
   });
 
-  it('should ...', inject([ApiService], (service: ApiService) => {
+  it('should be defined...', inject([ApiService], (service: ApiService) => {
     expect(service).toBeTruthy();
   }));
+
 });
