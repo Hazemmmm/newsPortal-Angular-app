@@ -1,7 +1,10 @@
 # NewsPortal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+and It's about integration with a [public API](http://developer.nytimes.com) to show the latest articles/news, also it has a functionalities for search for specific article or title, and filter based on diffrerent categories.
+## Install Dependencies
 
+Run `npm install` to be able to install all the project depdencies.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
