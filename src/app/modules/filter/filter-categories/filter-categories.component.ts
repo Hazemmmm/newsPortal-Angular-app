@@ -14,7 +14,7 @@ export class FilterCategoriesComponent implements OnInit, OnDestroy {
   selectedCategory!: any;
   categoriesSubscription!: Subscription;
 
-  constructor(private interactService: InteractService,private apiService: ApiService) {}
+  constructor(private interactService: InteractService) {}
 
   ngOnInit() {
     this.getCategoriesList();
@@ -27,9 +27,7 @@ export class FilterCategoriesComponent implements OnInit, OnDestroy {
     );
   }
 
-  getSelectedCategory(): void {
-    // console.log(this.selectedCategory);
-  }
+  getSelectedCategory(): void {}
 
   onChange(category: ArticleSections) {
     this.interactService.$category.next(category);

@@ -8,15 +8,13 @@ import { InteractService } from 'src/app/core/api/interact.service';
   styleUrls: ['./header-toolbar.component.css'],
 })
 export class HeaderToolbarComponent implements OnInit {
-  text!: string;
   searchString: string = '';
-  results: string[] = [];
 
   constructor(private interactService: InteractService) {}
 
   ngOnInit() {}
 
-  onSearchChange(searchValue: any): void {
+  onSearchChange(searchValue: any ): void {
     this.interactService.$searchValue.next(searchValue.target.value);
   }
 }
