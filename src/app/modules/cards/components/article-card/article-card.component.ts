@@ -8,8 +8,12 @@ import { InteractService } from 'src/app/core/api/interact.service';
   styleUrls: ['./article-card.component.css'],
 })
 export class ArticleCardComponent implements OnInit, OnDestroy {
+  nytAltImg =
+    'https://mpng.subpng.com/20180606/cea/kisspng-the-new-york-times-company-new-york-city-news-jour-new-york-icons-5b187238ae78d0.6794013715283287607146.jpg';
+
   private articleDataSubscription!: Subscription;
   technologyNewsResult: any;
+  articleData: any;
   constructor(private interactService: InteractService) {}
 
   ngOnInit() {
@@ -17,8 +21,10 @@ export class ArticleCardComponent implements OnInit, OnDestroy {
   }
   getArticleData(): void {
     this.articleDataSubscription = this.interactService.$articleData.subscribe(
-      (articleData) => {
-        console.log(articleData);
+      (res) => {
+        this.articleData = res;
+        console.log(this.articleData);
+
       }
     );
   }
