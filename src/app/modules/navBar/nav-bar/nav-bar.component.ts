@@ -10,8 +10,7 @@ export class NavBarComponent implements OnInit {
   currentTabIndex: number = 0;
   navLinks = [
     { label: 'News', path: 'news' },
-    { label: 'Tech', path: 'tech' },
-    // { label: 'Articles', path: 'articles' },
+    { label: 'Tech', path: 'tech' }
   ];
   activeLink = this.navLinks[0];
   background: ThemePalette = undefined;

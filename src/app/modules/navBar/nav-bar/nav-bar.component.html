@@ -1,33 +1,8 @@
-<!-- <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-        <<img src="assets/primeng.svg" height="40" class="mr-2">>
-    </ng-template>
-    <ng-template pTemplate="end">
-        <input type="text" pInputText placeholder="Search">
-    </ng-template>
-</p-menubar> -->
 
-<!-- <div class="row">
-
-  <p-tabView headerAlignment="center" [activeIndex]="currentTabIndex">
-    <p-tabPanel header="News">
-     <app-news-card></app-news-card>
-    </p-tabPanel>
-    <p-tabPanel header="Busniess">
-      <app-article-card></app-article-card>
-    </p-tabPanel>
-    <p-tabPanel header="Tech">
-      <a class="nav-link" routerLink="technology"></a>
-    </p-tabPanel>
-  </p-tabView>
-
-</div> -->
-
-
-<nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel" mat-align-tabs="center">
+<!-- <nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel" mat-align-tabs="center">
   <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path"
      (click)="activeLink = link"
      [active]="activeLink == link"> {{link.label}} </a>
-</nav>
-<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+</nav> -->
+<!-- <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
 <router-outlet></router-outlet>
