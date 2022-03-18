@@ -45,18 +45,19 @@
                       <img
                         src="{{ news.multimedia ? news.multimedia[0].url : nytAltImg}}"
                         alt="Trendy Pants and Shoes"
-                        class="img-fluid rounded-start"
+                        class="rounded float-left img-fluid"
                       />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-lg-7">
                       <div class="card-body">
-                        <h5 class="card-title">{{news.title}}</h5>
-                        <p class="card-text">{{news.abstract}}</p>
-                        <p class="card-text">
+                        <h3 class="card-title"><strong>{{news.title}}</strong></h3>
+                        <h5 class="card-text">{{news.abstract}}</h5>
+                        <p class="date-text">
                           <small class="text-muted">{{news.created_date | date:"fullDate"}}</small>
                         </p>
                       </div>
                     </div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Read More ..</button>
 
                   </div>
                 </div>
