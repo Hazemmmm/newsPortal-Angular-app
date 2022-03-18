@@ -25,7 +25,7 @@
 
 <figure class="figure">
   <img src="{{ articleData.multimedia ? articleData.multimedia[0].url : nytAltImg}}" class="img-fluid" alt="Responsive image">
-  <figcaption class="figure-caption">{{articleData.multimedia[0].caption ? articleData.multimedia[0].caption : ''}}</figcaption>
+  <figcaption class="figure-caption">{{articleData.multimedia ? articleData.multimedia[0].caption : articleData.multimedia[0].copyright }}</figcaption>
 </figure>
 
 <div class="container py-5 h-100">

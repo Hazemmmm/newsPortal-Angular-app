@@ -13,7 +13,6 @@ export class SpinnerLoaderComponent implements OnInit {
 
   ngOnInit() {
     this.interactService.$isLoading.subscribe((flag: boolean) => {
-      console.log(flag);
       this.isLoading = flag;
     })
   }

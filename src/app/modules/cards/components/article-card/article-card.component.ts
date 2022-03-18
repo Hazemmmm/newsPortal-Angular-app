@@ -22,13 +22,11 @@ export class ArticleCardComponent implements OnInit, OnDestroy {
   getArticleData(): void {
     this.articleDataSubscription = this.interactService.$articleData.subscribe(
       (res) => {
-        this.articleData = res;
-        console.log(this.articleData);
+         return this.articleData = res;
 
       }
     );
   }
-
   ngOnDestroy(): void {
     this.articleDataSubscription.unsubscribe();
   }
