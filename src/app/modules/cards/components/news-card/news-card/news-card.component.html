@@ -1,33 +1,9 @@
- <!-- <div class="container">
-  <div>Technology News</div>
-  <div class="row">
-  <div
-      class="col-md-4 .h-100"
-      *ngFor="let news of latestNewsResult"
-    >
-        <p-card header="{{news.title}}" subheader="{{news.section}}" [style]="{width: '360px'}" styleClass="card p-card-shadow">
-        <ng-template pTemplate="header">
-            <img alt="Card" src="{{ news.multimedia[0].url }}" width="100%" class="card-img-top" alt="..." >
-        </ng-template>
-        <ng-template pTemplate="title">
-            <p>{{news.subsection}}</p>
-        </ng-template>
-        <ng-template pTemplate="content">
-            <p class="text-wrapper">{{news.abstract}}</p>
-        </ng-template>
 
-
-        <ng-template pTemplate="footer">
-
-            <p-button label="Read More" icon="pi-question-circle" styleClass="p-button-secondary" [style]="{'margin-left': '5em'}"></p-button>
-        </ng-template>
-        </p-card>
-  </div>
+<div *ngIf="isLoading" class="d-flex justify-content-center" id="spinner-loader">
+  <div class="spinner-border m-5" role="status">
+    <span class="sr-only"></span>
   </div>
 </div>
-
-
- -->
 
 <div class="container" style="margin-top: 100px;">
 
